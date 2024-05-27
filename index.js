@@ -30,7 +30,7 @@ bot.command('convert', async (ctx) => {
         const response = await axios.get(`https://api.exchangerate-api.com/v4/latest/${from}`);
         const rates = response.data.rates;
         const convertedSum = sum * rates[to];
-        ctx.reply(`При конвертации <b>${sum} ${b}</code> в <b>${to}</b> вы получите: <b>${convertedSum} ${to}</b>`, { parse_mode: 'HTML' });
+        ctx.reply(`При конвертации <b>${sum} ${from}</b> в <b>${to}</b> вы получите: <b>${convertedSum} ${to}</b>`, { parse_mode: 'HTML' });
     } catch (error) {
         ctx.reply('Произошла ошибка при конвертации валюты');
     }
